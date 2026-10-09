@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b4e3d">
+  <title>Happy Teachers' Day, Mr. Randy Bello!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">✦</div>
+    <div>
+      <p class="eyebrow">A little note of gratitude</p>
+      <h1>Teachers’ Day Card</h1>
+    </div>
+    <button class="sound-toggle" id="musicButton" type="button" aria-pressed="false">
+      <span aria-hidden="true">♫</span> <span id="musicButtonText">Play music</span>
+    </button>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">Made with appreciation</p>
+      <h2>For a teacher who makes a difference.</h2>
+      <p class="intro-copy">A small digital book filled with a big thank-you. Open the card, turn the pages, and personalize it with your own photos and music.</p>
+      <div class="mini-note"><span>✿</span><span>To <strong>Mr. Randy Bello</strong>, with gratitude.</span></div>
+      <div class="page-controls">
+        <button id="prevButton" class="nav-button" type="button" disabled>← Previous</button>
+        <span id="pageCount" aria-live="polite">Cover · 1 of 4</span>
+        <button id="nextButton" class="nav-button" type="button">Next →</button>
+      </div>
+      <p class="hint">Tip: click the card or use the arrow buttons to turn the pages.</p>
+    </section>
+
+    <section class="book-area" aria-label="Interactive Teachers' Day card">
+      <div class="book" id="book">
+        <article class="page page-cover" data-page="0">
+          <div class="cover-inner">
+            <div class="cover-flourish" aria-hidden="true">❧</div>
+            <p class="cover-kicker">A heartfelt thank-you</p>
+            <h2>Happy<br><em>Teachers’</em><br>Day!</h2>
+            <div class="cover-rule"><span>✦</span></div>
+            <p class="cover-to">For <strong>Mr. Randy Bello</strong></p>
+            <p class="cover-small">Turn the page to read your message</p>
+            <div class="cover-stamp" aria-hidden="true">THANK<br>YOU</div>
+          </div>
+        </article>
+
+        <article class="page page-message" data-page="1">
+          <div class="paper-content">
+            <p class="page-label">A message for you</p>
+            <div class="small-flower" aria-hidden="true">✿</div>
+            <h2>Dear <span id="teacherHeading">Mr. Randy Bello</span>,</h2>
+            <p id="displayMessage" class="message-text" contenteditable="true" spellcheck="true">Happy Teachers’ Day! Thank you for your patience, guidance, and dedication. Your lessons inspire us to learn, grow, and become better people. We truly appreciate everything you do for us!</p>
+            <p class="signoff">With appreciation,</p>
+            <p id="displayStudent" class="student-signature">Lorraine Joyce Valler</p>
+            <div class="bottom-decoration" aria-hidden="true">✦　❀　✦</div>
+          </div>
+        </article>
+
+        <article class="page page-photo" data-page="2">
+          <div class="paper-content photo-content">
+            <p class="page-label">A memory to keep</p>
+            <h2>Thank you for inspiring us.</h2>
+            <div class="photo-frame">
+              <img id="teacherPhoto" src="assets/teacher-photo.png" alt="Teacher portrait">
+              <div id="photoPlaceholder" class="photo-placeholder" hidden>
+                <span>＋</span><p>Add a photo using the controls</p>
+              </div>
+            </div>
+            <p class="photo-caption">Every lesson leaves a little light behind.</p>
+            <div class="bottom-decoration" aria-hidden="true">❀</div>
+          </div>
+        </article>
+
+        <article class="page page-back" data-page="3">
+          <div class="back-inner">
+            <div class="back-icon" aria-hidden="true">✿</div>
+            <p class="page-label">Always appreciated</p>
+            <h2>Thank you,<br><em>Teacher!</em></h2>
+            <p>For your time, your kindness, and the knowledge you share.</p>
+            <div class="back-line"></div>
+            <p class="back-student" id="backStudent">Lorraine Joyce Valler</p>
+            <p class="back-year">TEACHERS’ DAY · 2026</p>
+          </div>
+        </article>
+      </div>
+      <div class="book-shadow"></div>
+    </section>
+
+    <aside class="customizer">
+      <div class="customizer-heading">
+        <p class="eyebrow">Make it yours</p>
+        <h2>Customize your card</h2>
+      </div>
+      <label for="teacherInput">Teacher’s name</label>
+      <input id="teacherInput" type="text" value="Mr. Randy Bello" maxlength="80">
+      <label for="studentInput">Student’s name</label>
+      <input id="studentInput" type="text" value="Lorraine Joyce Valler" maxlength="80">
+      <label for="messageInput">Personalized message</label>
+      <textarea id="messageInput" rows="5">Happy Teachers’ Day! Thank you for your patience, guidance, and dedication. Your lessons inspire us to learn, grow, and become better people. We truly appreciate everything you do for us!</textarea>
+      <div class="upload-row">
+        <label class="upload-control" for="photoInput"><span aria-hidden="true">▧</span> Add / change photo</label>
+        <input id="photoInput" type="file" accept="image/*">
+        <label class="upload-control" for="audioInput"><span aria-hidden="true">♫</span> Add audio</label>
+        <input id="audioInput" type="file" accept="audio/*">
+      </div>
+      <div class="audio-status" id="audioStatus">Optional music: use the included sample track or upload your own audio.</div>
+      <audio id="audioPlayer" preload="metadata" loop>
+        <source src="assets/background-music.m4a" type="audio/mp4">
+      </audio>
+      <div class="customizer-actions">
+        <button id="applyButton" class="primary-button" type="button">Update card</button>
+        <button id="resetButton" class="secondary-button" type="button">Reset</button>
+      </div>
+      <p class="privacy-note">Your edits and uploaded files stay in this browser session. To keep your chosen photo or audio when sharing the project, place the file in the <code>assets</code> folder and update its path in the HTML.</p>
+    </aside>
+  </main>
+  <footer>Designed with gratitude · A digital book for Teachers’ Day</footer>
+  <script src="script.js"></script>
+</body>
+</html>
